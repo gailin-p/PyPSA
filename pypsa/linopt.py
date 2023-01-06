@@ -791,11 +791,13 @@ def run_and_read_highs(
     objective = float(log["Objective value"])
 
     # read out solution file (.sol)
-    f = open(solution_fn, "rb")
-    trimed_sol_fn = re.sub(rb"\*\*\s+", b"", f.read())
-    f.close()
+    # f = open(solution_fn, "rb")
+    # trimed_sol_fn = re.sub(rb"\*\*\s+", b"", f.read())
+    # f.close()
 
-    sol = pd.read_fwf(io.BytesIO(trimed_sol_fn), header=[1])
+    # sol = pd.read_fwf(io.BytesIO(trimed_sol_fn), header=[1])
+    print("Here")
+    sol = pd.read_fwf(solution_fn, header=[1], widths=[9, 7, 13, 13, 13, 13, 10])
 
     sol = sol.iloc[:-2, :]  # last two rows are model info: status and objective value
 
