@@ -27,7 +27,6 @@ setup(
         "pandas>=0.24,<2.1",
         "xarray",
         "netcdf4",
-        "tables",
         "pyomo>=5.7,<6.6.2",
         "linopy>=0.2.1",
         "matplotlib",
@@ -39,6 +38,7 @@ setup(
     extras_require={
         "dev": ["pytest", "pypower", "pandapower", "scikit-learn"],
         "cartopy": ["cartopy>=0.16"],
+        "hdf5": ["tables"], # Support import/export from/to HDF5 files
         "docs": [
             "numpydoc",
             "sphinx",
